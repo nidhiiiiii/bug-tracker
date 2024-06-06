@@ -1,10 +1,11 @@
 'use client'
+import '@radix-ui/themes/styles.css';
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import React from 'react'
 import { FaBug } from "react-icons/fa";
 import classnames from "classnames"
-
+import { Theme } from '@radix-ui/themes';
 
 const NavBar = () => {
     const links=[
@@ -15,7 +16,7 @@ const NavBar = () => {
     const currentPath=usePathname();
     console.log(currentPath);
   return (
-    <nav className='flex space-x-6 border-b mb-6 px-5 h-14 items-center'>
+        <nav className='flex space-x-6 border-b mb-6 px-5 h-14 items-center'>
         <Link href="/"><FaBug/></Link>
         <ul className='flex space-x-6' >
             {links.map(link=><Link 
@@ -26,9 +27,7 @@ const NavBar = () => {
                 'hover:text-zinc-800 transition-colors':true,
             })}
             href={link.href}>{link.labels}</Link>)}
-
-        </ul>
-        
+        </ul>        
     </nav>
   )
 }
