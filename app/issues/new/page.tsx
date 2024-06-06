@@ -15,6 +15,7 @@ const newIssue=() =>{
   const {register,control,handleSubmit}=useForm<Issue>();
   const router = useRouter();
   // console.log(register('title'))
+  
   return (
     <form 
       className='max-w-xl space-y-3' 
